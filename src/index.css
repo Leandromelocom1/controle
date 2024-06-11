@@ -1,0 +1,149 @@
+/* src/index.css */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #02070e;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+h1, h2 {
+  color: #444;
+}
+
+form {
+  margin-bottom: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+input, textarea {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  background-color: #007bff;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ddd;
+}
+
+.logoff {
+  background-color: #dc3545;
+}
+
+.logoff:hover {
+  background-color: #c82333;
+}
+
+/* Estilos específicos para todos os formulários */
+.user-register-form, .withdrawal-form, .tool-register-form, .work-register-form, .return-form, .maintenance-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.user-register-form h2, .withdrawal-form h2, .tool-register-form h2, .work-register-form h2, .return-form h2, .maintenance-page h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.user-register-form .form-group, .withdrawal-form .form-group, .tool-register-form .form-group, .work-register-form .form-group, .return-form .form-group, .maintenance-page .form-group {
+  margin-bottom: 15px;
+}
+
+.user-register-form .form-group label, .withdrawal-form .form-group label, .tool-register-form .form-group label, .work-register-form .form-group label, .return-form .form-group label, .maintenance-page .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.user-register-form .form-group input, .withdrawal-form .form-group input, .tool-register-form .form-group input, .work-register-form .form-group input, .return-form .form-group input, .maintenance-page .form-group input,
+.user-register-form .form-group select, .withdrawal-form .form-group select, .tool-register-form .form-group select, .work-register-form .form-group select, .return-form .form-group select, .maintenance-page .form-group select,
+.user-register-form .form-group textarea, .withdrawal-form .form-group textarea, .tool-register-form .form-group textarea, .work-register-form .form-group textarea, .return-form .form-group textarea, .maintenance-page .form-group textarea {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.user-register-form .btn, .withdrawal-form .btn, .tool-register-form .btn, .work-register-form .btn, .return-form .btn, .maintenance-page .btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.user-register-form .btn:hover, .withdrawal-form .btn:hover, .tool-register-form .btn:hover, .work-register-form .btn:hover, .return-form .btn:hover, .maintenance-page .btn:hover {
+  background-color: #0056b3;
+}
+
+.form-check-input {
+  width: 1.2em;
+  height: 1.2em;
+}
+
+.small-input {
+  max-width: 200px; /* Ajuste este valor conforme necessário */
+}
+
+@media (max-width: 600px) {
+  .user-register-form, .withdrawal-form, .tool-register-form, .work-register-form, .return-form, .maintenance-page {
+    padding: 10px;
+  }
+}
