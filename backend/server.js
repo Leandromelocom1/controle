@@ -176,7 +176,7 @@ app.post('/steel-entry', async (req, res) => {
   try {
     const existingEntry = await Steel.findOne({ corrida, type: 'entry' });
     if (existingEntry) {
-      return res.status(400).json({ error: 'Corrida já existe. Por favor, verifique o número da corrida.' });
+      return res.status(400).json({ error: 'Corrida já registrada na entrada de aço.' });
     }
     const newEntry = new Steel({ date, corrida, feixe, peso, type: 'entry' });
     await newEntry.save();
@@ -274,4 +274,3 @@ app.get('/steel-entry/:corrida', async (req, res) => {
 app.listen(PORT, '192.168.0.78', () => {
   console.log(`Server is running on port ${PORT}`);
 });
-  
