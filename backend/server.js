@@ -349,7 +349,7 @@ app.post('/send-email', authenticateJWT, async (req, res) => {
     secure: false, // true para port 465, false para outras portas
     auth: {
       user: 'leandro@engemolde.com.br', // Substitua pelo seu email
-      pass: '2022@39!86#22@EnG' // Substitua pela sua senha de email
+      pass: '***' // Substitua pela sua senha de email
     }
   });
 
