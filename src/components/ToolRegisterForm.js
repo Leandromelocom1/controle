@@ -1,7 +1,7 @@
-// src/components/ToolRegisterForm.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
+import '../App.css'; // Certifique-se de que o arquivo CSS esteja importado
 
 const ToolRegisterForm = ({ refreshTools }) => {
   const [name, setName] = useState('');
@@ -16,7 +16,7 @@ const ToolRegisterForm = ({ refreshTools }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000'; // Utiliza a variável de ambiente ou um valor padrão
+    const apiUrl = process.env.REACT_APP_API_URL || 'http://192.168.0.78:5000'; // Utiliza a variável de ambiente ou um valor padrão
     try {
       await axios.post(`${apiUrl}/tools`, {
         toolName: name,
@@ -42,7 +42,7 @@ const ToolRegisterForm = ({ refreshTools }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="tool-register-form">
+    <form onSubmit={handleSubmit} className="tool-register-form container">
       <h2 className="mb-4">Cadastro de Ferramentas</h2>
       <div className="form-group mb-3">
         <label htmlFor="name">Nome:</label>

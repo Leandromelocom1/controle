@@ -4,7 +4,7 @@ import axios from 'axios';
 const ToolList = ({ tools, setTools, refreshTools }) => {
   const handleRemove = async (id) => {
     try {
-      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+      const apiUrl = process.env.REACT_APP_API_URL || 'http://192.168.0.78:5000';
       await axios.patch(`${apiUrl}/tools/${id}`, { status: 'Baixada' });
       refreshTools();
     } catch (error) {
@@ -14,7 +14,7 @@ const ToolList = ({ tools, setTools, refreshTools }) => {
 
   const handleDefect = async (id) => {
     try {
-      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+      const apiUrl = process.env.REACT_APP_API_URL || 'http://192.168.0.78:5000';
       await axios.patch(`${apiUrl}/tools/${id}`, { status: 'Defeito' });
       refreshTools();
     } catch (error) {

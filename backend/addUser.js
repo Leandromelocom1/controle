@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
 // Conecte-se ao MongoDB
-mongoose.connect('mongodb://localhost:27017/addengemolde', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://192.168.0.78:27017/addengemolde', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const userSchema = new mongoose.Schema({
   username: String,

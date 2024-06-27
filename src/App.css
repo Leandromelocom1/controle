@@ -1,144 +1,348 @@
-/* src/index.css */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #02070e;
-  margin: 0;
-  padding: 0;
-}
-
-.App {
+/* Estilo para o contêiner de login */
+.login-container {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  margin: 120px auto;
   text-align: center;
-  padding: 20px;
 }
 
-h1, h2 {
-  color: #444;
-}
-
-form {
+/* Estilo para o título do formulário de login */
+.login-container h2 {
   margin-bottom: 20px;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  color: #333;
+  font-size: 24px;
+  font-weight: 500;
 }
 
-input {
-  margin: 10px 0;
+/* Estilo para os grupos de formulário */
+.login-form .form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+/* Estilo para os rótulos do formulário */
+.login-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Estilo para os campos de entrada do formulário */
+.login-form input {
+  width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: 100%;
   box-sizing: border-box;
 }
 
-button {
-  padding: 10px 20px;
+/* Estilo para o botão de login */
+.login-form button {
+  width: 100%;
+  padding: 10px;
   background-color: #007bff;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin: 5px;
+  font-size: 16px;
   transition: background-color 0.3s ease;
+  margin-top: 10px;
 }
 
-button:hover {
+/* Estilo para o botão de login ao passar o mouse */
+.login-form button:hover {
   background-color: #0056b3;
 }
 
-.error {
+/* Estilo para a mensagem de erro */
+.login-form .error {
   color: red;
   margin-top: 10px;
 }
 
-nav {
-  display: flex;
-  justify-content: center;
+/* Estilo para o rodapé */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #212121;
+  padding-top: 10px;
+  text-align: center;
+  color: #fff;
+}
+
+footer a {
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .login-container {
+    padding: 20px;
+  }
+
+  .login-container h2 {
+    font-size: 20px;
+  }
+}
+
+/* Estilo para o contêiner principal */
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 7px;
+  border-radius: 30px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para o título Estoque Ferramentas */
+h1 {
+  font-size: 24px;
+  font-weight: 500;
   margin-bottom: 20px;
-  background-color: #007bff;
+  text-align: center;
+  color: #0a0a0a;
+}
+
+/* Estilo para os itens da lista */
+.list-group-item {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Estilo para o texto em negrito */
+.fw-bold {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+/* Estilo para os campos de formulário */
+.form-control {
+  margin-bottom: 10px;
   padding: 10px;
   border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  transition: color 0.3s ease;
+/* Estilo para as áreas de texto */
+textarea.form-control {
+  height: 80px;
 }
 
-nav a:hover {
-  color: #ddd;
+/* Estilo para os botões */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 10px;
 }
 
-.logoff {
-  background-color: #dc3545;
+/* Estilo para os botões de Gestão de Manutenção */
+.btn-warning {
+  background-color: #f93808;
 }
 
-.logoff:hover {
-  background-color: #c82333;
+.btn-warning:hover {
+  background-color: #e0a800;
 }
 
-/* Estilos específicos para todos os formulários */
-.user-register-form, .withdrawal-form, .tool-register-form, .work-register-form, .return-form {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #f9f9f9;
+.btn-success {
+  background-color: #28a745;
 }
 
-.user-register-form h2, .withdrawal-form h2, .tool-register-form h2, .work-register-form h2, .return-form h2 {
-  margin-bottom: 20px;
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.btn-primary {
+  background-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para a margem entre itens */
+.mb-3 {
+  margin-bottom: 10px !important;
+}
+
+/* Estilo para espaçamento entre itens da lista */
+.ms-2 {
+  margin-left: 8px !important;
+}
+
+.me-2 {
+  margin-right: 8px !important;
+}
+
+.me-auto {
+  margin-right: auto !important;
+}
+
+/* Estilo para o formulário de cadastro de ativos */
+.asset-register-form,
+.tool-register-form,
+.vehicle-exit-form,
+.vehicle-return-form {
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+}
+
+.asset-register-form h2,
+.tool-register-form h2,
+.vehicle-exit-form h2,
+.vehicle-return-form h2 {
+  margin-bottom: 40px;
   text-align: center;
 }
 
-.user-register-form .form-group, .withdrawal-form .form-group, .tool-register-form .form-group, .work-register-form .form-group, .return-form .form-group {
-  margin-bottom: 15px;
+.asset-register-form .form-group,
+.tool-register-form .form-group,
+.vehicle-exit-form .form-group,
+.vehicle-return-form .form-group {
+  margin-bottom: 30px;
 }
 
-.user-register-form .form-group label, .withdrawal-form .form-group label, .tool-register-form .form-group label, .work-register-form .form-group label, .return-form .form-group label {
+.asset-register-form label,
+.tool-register-form label,
+.vehicle-exit-form label,
+.vehicle-return-form label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
   font-weight: bold;
 }
 
-.user-register-form .form-group input, .withdrawal-form .form-group input, .tool-register-form .form-group input, .work-register-form .form-group input, .return-form .form-group input,
-.user-register-form .form-group select, .withdrawal-form .form-group select, .tool-register-form .form-group select, .work-register-form .form-group select, .return-form .form-group select {
+.asset-register-form input,
+.asset-register-form select,
+.asset-register-form textarea,
+.tool-register-form input,
+.tool-register-form select,
+.tool-register-form textarea,
+.vehicle-exit-form input,
+.vehicle-exit-form select,
+.vehicle-exit-form textarea,
+.vehicle-return-form input,
+.vehicle-return-form select,
+.vehicle-return-form textarea {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
   box-sizing: border-box;
+}
+
+/* Estilo para o cabeçalho */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f8f9fa;
+}
+
+.search-container {
+  position: relative;
+  width: 300px;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-.user-register-form .btn, .withdrawal-form .btn, .tool-register-form .btn, .work-register-form .btn, .return-form .btn {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  border: none;
+/* Estilos para os resultados da pesquisa */
+.search-results {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  background-color: white;
+  border: 1px solid #ddd;
   border-radius: 4px;
-  background-color: #007bff;
-  color: #fff;
-  font-size: 16px;
+  max-width: 400px;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.search-results ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-results li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.search-results li:last-child {
+  border-bottom: none;
+}
+
+.search-results li:hover {
+  background-color: #f1f1f1;
   cursor: pointer;
-  margin-top: 20px;
 }
 
-.user-register-form .btn:hover, .withdrawal-form .btn:hover, .tool-register-form .btn:hover, .work-register-form .btn:hover, .return-form .btn:hover {
-  background-color: #0056b3;
+/* Media queries para tornar o sistema responsivo */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-container {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .search-results {
+    top: 50px;
+    right: 0;
+    left: 0;
+    max-width: 100%;
+  }
 }
 
-.form-check-input {
-  width: 1.2em;
-  height: 1.2em;
-}
+@media (max-width: 576px) {
+  .login-container {
+    padding: 20px;
+  }
 
-@media (max-width: 600px) {
-  .user-register-form, .withdrawal-form, .tool-register-form, .work-register-form, .return-form {
+  .container {
     padding: 10px;
+  }
+
+  .asset-register-form, .asset-type-register-form {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .list-group-item {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

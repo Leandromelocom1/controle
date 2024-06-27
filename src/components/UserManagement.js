@@ -7,7 +7,7 @@ const UserManagement = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+        const apiUrl = process.env.REACT_APP_API_URL || 'http://192.168.0.78:5000';
         const response = await axios.get(`${apiUrl}/users`);
         setUsers(response.data);
       } catch (error) {
@@ -19,7 +19,7 @@ const UserManagement = () => {
 
   const handlePermissionChange = async (id, permissions) => {
     try {
-      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+      const apiUrl = process.env.REACT_APP_API_URL || 'http://192.168.0.78:5000';
       await axios.patch(`${apiUrl}/users/${id}`, { permissions });
       setUsers(users.map(user => (user._id === id ? { ...user, permissions } : user)));
     } catch (error) {

@@ -1,6 +1,7 @@
-// src/components/UserRegisterForm.js
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Form, Button, Container, Alert } from 'react-bootstrap';
+import '../App.css';
 
 const UserRegisterForm = ({ refreshUsers }) => {
   const [username, setUsername] = useState('');
@@ -17,7 +18,7 @@ const UserRegisterForm = ({ refreshUsers }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const apiUrl = process.env.REACT_APP_API_URL || 'http://192.168.0.78:5000'; // Ajuste a URL conforme necessário
+    const apiUrl = process.env.REACT_APP_API_URL || 'http://192.168.0.78:5000';
     try {
       await axios.post(`${apiUrl}/users`, {
         username,
@@ -36,86 +37,64 @@ const UserRegisterForm = ({ refreshUsers }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="container mt-4 user-register-form">
+    <Container className="user-register-form">
       <h2 className="mb-4">Cadastro de Usuários</h2>
-      <div className="form-group mb-3">
-        <label htmlFor="username">Nome de Usuário:</label>
-        <input
-          type="text"
-          className="form-control"
-          id="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
-      </div>
-      <div className="form-group mb-3">
-        <label htmlFor="password">Senha:</label>
-        <input
-          type="password"
-          className="form-control"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </div>
-      <div className="form-group mb-3">
-        <label>Permissões:</label>
-        <div className="form-check">
-          <input
+      <Form onSubmit={handleSubmit}>
+        <Form.Group className="mb-3">
+          <Form.Label>Nome de Usuário:</Form.Label>
+          <Form.Control
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Senha:</Form.Label>
+          <Form.Control
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Permissões:</Form.Label>
+          <Form.Check
             type="checkbox"
-            className="form-check-input"
-            id="admin"
+            label="Administração"
             value="admin"
             onChange={handleCheckboxChange}
           />
-          <label className="form-check-label" htmlFor="admin">Administração</label>
-        </div>
-        <div className="form-check">
-          <input
+          <Form.Check
             type="checkbox"
-            className="form-check-input"
-            id="toolManagement"
+            label="Gerenciamento de Ferramentas"
             value="toolManagement"
             onChange={handleCheckboxChange}
           />
-          <label className="form-check-label" htmlFor="toolManagement">Gerenciamento de Ferramentas</label>
-        </div>
-        <div className="form-check">
-          <input
+          <Form.Check
             type="checkbox"
-            className="form-check-input"
-            id="workManagement"
+            label="Gerenciamento de Obras"
             value="workManagement"
             onChange={handleCheckboxChange}
           />
-          <label className="form-check-label" htmlFor="workManagement">Gerenciamento de Obras</label>
-        </div>
-        <div className="form-check">
-          <input
+          <Form.Check
             type="checkbox"
-            className="form-check-input"
-            id="maintenance"
+            label="Manutenção"
             value="maintenance"
             onChange={handleCheckboxChange}
           />
-          <label className="form-check-label" htmlFor="maintenance">Manutenção</label>
-        </div>
-        <div className="form-check">
-          <input
+          <Form.Check
             type="checkbox"
-            className="form-check-input"
-            id="reports"
+            label="Relatórios"
             value="reports"
             onChange={handleCheckboxChange}
           />
-          <label className="form-check-label" htmlFor="reports">Relatórios</label>
-        </div>
-      </div>
-      {error && <p className="text-danger">{error}</p>}
-      <button type="submit" className="btn btn-primary">Cadastrar</button>
-    </form>
+        </Form.Group>
+        {error && <Alert variant="danger">{error}</Alert>}
+        <Button type="submit" variant="primary">Cadastrar</Button>
+      </Form>
+    </Container>
   );
 };
 

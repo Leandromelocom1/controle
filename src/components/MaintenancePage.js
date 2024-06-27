@@ -1,6 +1,8 @@
 // src/components/MaintenancePage.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../App.css';
 
 const MaintenancePage = () => {
   const [defectiveTools, setDefectiveTools] = useState([]);
@@ -11,7 +13,7 @@ const MaintenancePage = () => {
   useEffect(() => {
     const fetchDefectiveTools = async () => {
       try {
-        const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+        const apiUrl = process.env.REACT_APP_API_URL || 'http://192.168.0.78:5000';
         const response = await axios.get(`${apiUrl}/tools`, { params: { status: 'Em manutenção' } });
         setDefectiveTools(response.data);
       } catch (error) {
@@ -23,7 +25,7 @@ const MaintenancePage = () => {
 
   const handleUpdateStatus = async (id, status) => {
     try {
-      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+      const apiUrl = process.env.REACT_APP_API_URL || 'http://192.168.0.78:5000';
       await axios.patch(`${apiUrl}/tools/${id}`, { status });
       setDefectiveTools(defectiveTools.map(tool => tool._id === id ? { ...tool, status } : tool));
       alert(`Status da ferramenta atualizado para ${status}.`);
@@ -35,7 +37,7 @@ const MaintenancePage = () => {
 
   const handleRepair = async (id) => {
     try {
-      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+      const apiUrl = process.env.REACT_APP_API_URL || 'http://192.168.0.78:5000';
       await axios.patch(`${apiUrl}/tools/${id}`, {
         status: 'Em estoque',
         problemDescription,
@@ -53,7 +55,7 @@ const MaintenancePage = () => {
 
   const handleSendEmail = async (tool) => {
     try {
-      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+      const apiUrl = process.env.REACT_APP_API_URL || 'http://192.168.0.78:5000';
       await axios.post(`${apiUrl}/send-email`, {
         to: email,
         subject: `Peças necessárias para manutenção da ferramenta ${tool.toolName}`,

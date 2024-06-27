@@ -12,7 +12,7 @@ const ToolForm = ({ refreshTools }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+      const apiUrl = process.env.REACT_APP_API_URL || 'http://192.168.0.78:5000';
       await axios.post(`${apiUrl}/tools`, {
         toolName,
         responsible,

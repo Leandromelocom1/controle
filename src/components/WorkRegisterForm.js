@@ -1,12 +1,14 @@
 // src/components/WorkRegisterForm.js
 import React, { useState } from 'react';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';  
+import '../App.css';
 
 const WorkRegisterForm = ({ refreshWorks }) => {
   const [client, setClient] = useState('');
   const [workAddress, setWorkAddress] = useState('');
   const [workPeriod, setWorkPeriod] = useState('');
-  const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+  const apiUrl = process.env.REACT_APP_API_URL || 'http://192.168.0.78:5000';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,12 +29,13 @@ const WorkRegisterForm = ({ refreshWorks }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="work-register-form">
-      <h2>CADASTRO DE OBRAS</h2>
+    <form onSubmit={handleSubmit} className="container work-register-form">
+      <h2>Cadastro de Obras</h2>
       <div className="form-group">
         <label>Cliente:</label>
         <input
           type="text"
+          className="form-control"
           value={client}
           onChange={(e) => setClient(e.target.value)}
           required
@@ -42,6 +45,7 @@ const WorkRegisterForm = ({ refreshWorks }) => {
         <label>Endereço da Obra:</label>
         <input
           type="text"
+          className="form-control"
           value={workAddress}
           onChange={(e) => setWorkAddress(e.target.value)}
           required
@@ -51,6 +55,7 @@ const WorkRegisterForm = ({ refreshWorks }) => {
         <label>Período da Obra:</label>
         <input
           type="text"
+          className="form-control"
           value={workPeriod}
           onChange={(e) => setWorkPeriod(e.target.value)}
           required

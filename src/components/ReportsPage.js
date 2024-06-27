@@ -1,6 +1,8 @@
 // src/components/ReportsPage.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../App.css'; // Certifique-se de que o arquivo CSS foi importado corretamente
 
 const ReportsPage = () => {
   const [tools, setTools] = useState([]);
@@ -10,7 +12,7 @@ const ReportsPage = () => {
   useEffect(() => {
     const fetchTools = async () => {
       try {
-        const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+        const apiUrl = process.env.REACT_APP_API_URL || 'http://192.168.0.78:5000';
         const response = await axios.get(`${apiUrl}/tools`);
         setTools(response.data);
         setFilteredTools(response.data);
